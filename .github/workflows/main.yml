@@ -27,8 +27,13 @@ jobs:
         
       - name: Step2 - checout the code to make the job access it.
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
-
+        uses: actions/checkout@v4
+        
+      - name: Step3 - setup java jdk
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: sh ./github-actions.sh
