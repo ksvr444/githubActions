@@ -22,6 +22,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: step1 display the disk space
+        run: df
+        
+      - name: Step2 - checout the code to make the job access it.
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
@@ -33,3 +37,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Check Single Line command runs.
+
+      - name: Final Step, display the display space
+        run: df
